@@ -1,0 +1,32 @@
+/* PWS kit base: skip link, sr-only, concept bar, consent banner, legal pages.
+   Theme it by setting these variables in the site's own CSS:
+   --kit-ink, --kit-paper, --kit-accent, --kit-accent-ink, --kit-line, --kit-radius, --kit-callbar (height of a fixed phone call bar, 0 if none) */
+:root{--kit-ink:#151515;--kit-paper:#fff;--kit-accent:#0b5fa5;--kit-accent-ink:#fff;--kit-line:rgba(0,0,0,.14);--kit-radius:10px;--kit-callbar:0px}
+.sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.skip{position:absolute;left:12px;top:-60px;z-index:1000;background:var(--kit-ink);color:var(--kit-paper);padding:12px 16px;border-radius:var(--kit-radius);text-decoration:none;font-weight:700}
+.skip:focus{top:12px}
+.concept .short{display:none}
+@media (max-width:560px){.concept .long{display:none}.concept .short{display:inline}}
+.cc{position:fixed;z-index:900;right:16px;bottom:calc(16px + var(--kit-callbar));width:min(400px,calc(100vw - 32px));background:var(--kit-paper);color:var(--kit-ink);border:1px solid var(--kit-line);border-radius:var(--kit-radius);box-shadow:0 18px 50px rgba(0,0,0,.22);padding:18px 18px 16px;font-size:.95rem;line-height:1.45}
+.cc h2{font-size:1.05rem;margin:0 0 6px;line-height:1.2}.cc h2:focus{outline:none}
+.cc p{margin:0 0 12px}
+.cc .btns{display:flex;flex-wrap:wrap;gap:8px}
+.cc button{font:inherit;font-weight:700;min-height:44px;padding:8px 14px;border-radius:calc(var(--kit-radius) - 2px);border:2px solid var(--kit-ink);background:transparent;color:var(--kit-ink);cursor:pointer}
+.cc button.pri{background:var(--kit-accent);border-color:var(--kit-accent);color:var(--kit-accent-ink)}
+.cc button:focus-visible{outline:3px solid var(--kit-ink);outline-offset:2px}
+.cc .manage{margin-top:12px;border-top:1px solid var(--kit-line);padding-top:12px}
+.cc .manage label{display:flex;gap:8px;align-items:center;margin:0 0 8px;min-height:32px}
+.cc input{width:20px;height:20px}
+.legal{max-width:760px;margin:0 auto;padding:clamp(40px,7vw,80px) 20px clamp(56px,8vw,96px)}
+.legal .meta{opacity:.75;font-size:.95rem}
+.legal h2{margin-top:2em}
+.legal .table-wrap{overflow-x:auto}
+.legal table{border-collapse:collapse;width:100%;min-width:640px;font-size:.92rem}
+.legal th,.legal td{border:1px solid var(--kit-line);padding:8px 10px;text-align:left;vertical-align:top}
+.legal-form{display:grid;gap:14px;margin-top:18px;max-width:560px}
+.legal-form label{display:grid;gap:6px;font-weight:600}
+.legal-form input,.legal-form textarea{font:inherit;padding:12px;border:1.5px solid var(--kit-line);border-radius:calc(var(--kit-radius) - 2px);min-height:48px;background:var(--kit-paper);color:var(--kit-ink)}
+.legal-form textarea{min-height:130px}
+.legal-form .btn{justify-self:start}
+.legal-back{margin-top:34px}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
